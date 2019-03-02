@@ -1,0 +1,9 @@
+package com.NBdiMAN.exception;
+
+import org.springframework.web.bind.annotation.ControllerAdvice;
+
+//处理异常
+@ControllerAdvice
+public class HandleExceptionAdvice {
+	
+}

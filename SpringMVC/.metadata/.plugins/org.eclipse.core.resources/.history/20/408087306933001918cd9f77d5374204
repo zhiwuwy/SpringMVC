@@ -1,0 +1,17 @@
+package com.NBdiMAN;
+
+import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
+
+
+	protected Class<?>[] getRootConfigClasses() {
+	}
+	
+	protected Class<?>[] getServletConfigClasses() {
+		return null;
+	}
+
+	protected String[] getServletMappings() {
+		return null;
+	}
+
+}

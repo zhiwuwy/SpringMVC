@@ -1,0 +1,27 @@
+package com.NBdiMAN.web.controller;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.http.MediaType;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class DownloadController {
+	
+	@RequestMapping("/download")
+	public void download(String fileName, HttpServletRequest request, HttpServletResponse response) throws Exception {
+		String dir = request.getServletContext().getRealPath("/WEB-INF/down");
+		//设置响应头:下载文件
+		response.setContentType(MediaType.APPLICATION_OCTET_STREAM_VALUE);
+		//建议保存名称
+		response.setHeader("Content-disposition", 
+				"attachment;filename=" + new String(fileName.getBytes("UTF-8"),"ISO8859-1"));
+		Files.copy(Paths.get(dir, fileName), response.getOutputStream());
+	}
+}

@@ -1,0 +1,6 @@
+package com.NBdiMAN.web.interceptor;
+
+//注册拦截器
+public class CheckLoginInterceptor {
+	
+}

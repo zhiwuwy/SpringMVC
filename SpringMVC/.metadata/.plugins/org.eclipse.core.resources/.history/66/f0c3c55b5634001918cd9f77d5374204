@@ -1,0 +1,5 @@
+package com.NBdiMAN.exception;
+
+public class HandleExceptionAdvice {
+
+}

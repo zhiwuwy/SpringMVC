@@ -1,0 +1,20 @@
+package com.NBdiMAN.web.controller;
+
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class DownloadController {
+	
+	@RequestMapping("/download")
+	public void download(String fileName, HttpServletRequest request, HttpServletResponse response) {
+		String dir = request.getServletContext().getRealPath("/WEB-INF/down");
+		Files.copy(Paths.get(dir, fileName), response.getOutputStream());
+	}
+}

@@ -1,0 +1,13 @@
+package com.NBdiMAN;
+
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.stereotype.Component;
+
+@Configuration
+@ComponentScan//如果不写的话就从当前类所在的包向下去寻找
+@PropertySource("classpath:db.properties")//寻找properties文件
+public class AppConfig {
+	
+}

@@ -1,0 +1,5 @@
+package com.NBdiMAN.service;
+
+public interface IEmployeeService {
+
+}

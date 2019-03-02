@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	
+	<!-- 1.处理器映射器 -->
+	<!-- 
+		目的:寻找哪一个处理器(Controller)来处理当前请求
+		BeanNameUrlHandlerMapping
+		根据请求的URL去寻找对应的bean,根据id或name
+		/hello 去匹配id或name为/hello的bean
+	 -->
+	<bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
+	<!-- 2.处理器适配器 -->
+	<!-- 
+		目的:调用处理器(Controller)的处理请求的的方法
+			1:所有的适配器都会实现HandlerAdapter接口
+			2:所有的处理器都必须实现org.springframework.web.servlet.mvc.Controller接口
+	 -->
+	<bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/>
+	<!-- 3.视图解析器 -->
+	<!-- 处理视图 -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"/>
+	<!-- 4.处理器
+		SpringMVC中Handler(框架中的称呼)和Controller(我们习惯的称呼)是同一个东西
+	 -->
+	
+	<!--  -->
+	<bean id="/hello" class="com.whyme.hello.HelloController"/>
+	
+</beans>

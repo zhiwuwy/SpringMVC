@@ -1,0 +1,36 @@
+package com.NBdiMAN.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.NBdiMAN.dao.impl.EmployeeDAOImpl;
+import com.NBdiMAN.domain.Employee;
+
+public class EmployeeServiceImpl implements IEmployeeService{
+	
+	@Autowired
+	private EmployeeDAOImpl dao;
+	
+	public void save(Employee emp) {
+		dao.save(emp);
+	}
+
+	public void delete(Long id) {
+		dao.delete(id);
+	}
+
+	public void update(Employee emp) {
+		dao.update(emp);
+	}
+
+	public Employee get(Long id) {
+		Employee emp = dao.get(id);
+		return emp;
+	}
+
+	public List<Employee> listAll() {
+		return dao.listAll();
+	}
+
+}

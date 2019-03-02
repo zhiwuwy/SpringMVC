@@ -1,0 +1,54 @@
+package com.NBdiMAN;
+
+
+
+import javax.sql.DataSource;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+
+import com.alibaba.druid.pool.DruidDataSource;
+
+
+@Configuration		//表示这是一个JavaConfig类
+@ComponentScan		//如果不写的话就从当前类所在的包向下去寻找
+@PropertySource("classpath:db.properties")	//寻找properties文件
+@EnableTransactionManagement		//启动事务
+public class RootConfig {
+	
+	@Value("jdbc.driverClassName")
+	private String driverClassName;
+	@Value("jdbc.url")
+	private String url;
+	@Value("jdbc.username")
+	private String username;
+	@Value("jdbc.password")
+	private String password;
+	@Value("jdbc.initialSize")
+	private int initialSize;
+	
+	//连接池对象
+	@Bean //方法名就相当于bean元素的id名
+	public DataSource dataSource() {
+		DruidDataSource dataSource = new DruidDataSource();
+		dataSource.setDriverClassName(driverClassName);
+		dataSource.setUrl(url);
+		dataSource.setUsername(username);
+		dataSource.setPassword(password);
+		dataSource.setInitialSize(initialSize);
+		return dataSource;
+	}
+	
+	//事务管理器对象
+	@Bean
+	public DataSourceTransactionManager txManager(DataSource dataSource) {
+		DataSourceTransactionManager txManager = new DataSourceTransactionManager(dataSource);
+		return txManager;
+	}
+}

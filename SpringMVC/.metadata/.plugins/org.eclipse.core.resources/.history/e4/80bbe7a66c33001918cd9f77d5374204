@@ -1,0 +1,29 @@
+package com.NBdiMAN;
+
+import javax.servlet.ServletContext;
+
+import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
+
+//Web容器启动
+public class MyWebApplicationInitializer extends AbstractAnnotationConfigDispatcherServletInitializer{
+	
+	//根容器
+	protected Class<?>[] getRootConfigClasses() {
+		return new Class[] {RootConfig.class};
+	}
+	
+	//SpringMVC容器
+	protected Class<?>[] getServletConfigClasses() {
+		return new Class[] {WebConfig.class};
+	}
+	
+	//映射路径配置
+	protected String[] getServletMappings() {
+		return new String[] {"/"};
+	}
+	
+	//注册上下文启动的监听器
+	protected void registerContextLoaderListener(ServletContext servletContext) {
+		
+	}
+}

@@ -1,0 +1,19 @@
+package com.NBdiMAN;
+
+import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
+
+public class MyWebApplicationInitializer extends AbstractAnnotationConfigDispatcherServletInitializer{
+
+	protected Class<?>[] getRootConfigClasses() {
+		return null;
+	}
+	
+	protected Class<?>[] getServletConfigClasses() {
+		return null;
+	}
+
+	protected String[] getServletMappings() {
+		return null;
+	}
+
+}

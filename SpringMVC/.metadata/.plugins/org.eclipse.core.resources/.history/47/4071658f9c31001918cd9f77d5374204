@@ -1,0 +1,53 @@
+package com.NBdiMAN;
+
+import java.util.List;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
+
+import com.NBdiMAN.dao.IEmployeeDAO;
+import com.NBdiMAN.domain.Employee;
+
+@SpringJUnitConfig(locations="classpath:applicationContext.xml")
+public class App {
+	
+	@Autowired
+	private IEmployeeDAO dao;
+	
+	@Test
+	void testSave() throws Exception {
+		Employee emp = new Employee();
+		emp.setUsername("阿柴");
+		emp.setAge(6);
+		dao.save(emp);
+	}
+	
+	@Test
+	void testUpdate() throws Exception {
+		Employee emp = new Employee();
+		emp.setId(7L);
+		emp.setUsername("阿柴");
+		emp.setAge(6);
+		dao.update(emp);
+	}
+	
+	@Test
+	void testDelete() throws Exception {
+		dao.delete(7L);
+	}
+	
+	@Test
+	void testGet() throws Exception {
+		Employee emp = dao.get(1L);
+		System.out.println(emp);
+	}
+	
+	@Test
+	void testListAll() throws Exception {
+		List<Employee> emps = dao.listAll();
+		for (Employee emp : emps) {
+			System.out.println(emp);
+		}
+	}
+}

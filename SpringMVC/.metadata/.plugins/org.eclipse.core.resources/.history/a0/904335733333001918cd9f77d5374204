@@ -1,0 +1,6 @@
+package com.NBdiMAN.util;
+
+//封装当前登录用户的上下文信息
+public class UserContext {
+
+}

@@ -1,0 +1,4 @@
+eclipse.preferences.version=1
+jrebel.eclipse.plugin.version=2018.2.5.RELEASE
+jrebel.eclipse.plugin.wtp.autoenabled=true
+jrebelPreLaunchCheck=false

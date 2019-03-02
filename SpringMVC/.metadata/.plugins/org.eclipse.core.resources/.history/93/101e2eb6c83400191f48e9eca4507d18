@@ -1,0 +1,5 @@
+package com.NBdiMAN.web.controller;
+
+public class FileUploadController {
+
+}

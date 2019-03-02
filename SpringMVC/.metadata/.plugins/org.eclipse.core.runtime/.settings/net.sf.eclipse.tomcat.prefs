@@ -1,0 +1,9 @@
+configMode=serverFile
+contextsDir=E\:\\java-plugins\\apache-tomcat-8.5.34\\conf\\Catalina\\localhost
+eclipse.preferences.version=1
+managerUrl=http\://localhost\:8080/manager
+projectsInSourcePath=EasyMVC;
+tomcatConfigFile=E\:\\java-plugins\\apache-tomcat-8.5.34\\conf\\server.xml
+tomcatDir=E\:\\java-plugins\\apache-tomcat-8.5.34
+tomcatJRE=1548599035084
+tomcatVersion=tomcatV8

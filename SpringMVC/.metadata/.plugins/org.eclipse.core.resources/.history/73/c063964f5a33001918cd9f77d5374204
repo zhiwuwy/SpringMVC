@@ -1,0 +1,5 @@
+package com.NBdiMAN.web.interceptor;
+
+public class XXinterceptor {
+
+}
